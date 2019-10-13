@@ -11,7 +11,7 @@ export default class Navbar extends Component {
                         All Items
                     </span>
                </Link>
-               <Link to="/">
+               <Link to="#">
                     <span>
                         Item is added to cart
                     </span>
