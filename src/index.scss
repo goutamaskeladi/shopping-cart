@@ -9,5 +9,45 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+$fontColor: #000;
+$buttonBackgroundColor:  #03A9F4;
+$buttonTextColor: #fff;
+$cartHeaderBackgroundColor: #4CAF50;
+
+nav {
+    display: flex;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    a:nth-child(1) {
+        flex: 1;
+        text-decoration: none;
+        font-size: 23px;
+        color: $fontColor;
+    }
+    a:nth-child(2) {
+        flex: 2;
+        text-decoration: none;
+        text-align: center;
+        span {
+            color: $cartHeaderBackgroundColor;
+        }
+    }
+    a:nth-child(3) {
+        flex: 1;
+        text-align: right;
+    }
+    button {
+        background: $buttonBackgroundColor;
+        color: $buttonTextColor;
+        border: 1px solid;
+        font-size: 14px;
+        width: 100px;
+        padding: 0.2rem 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }

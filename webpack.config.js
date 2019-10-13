@@ -52,5 +52,11 @@ module.exports = {
             
         ]
     },
-    plugins: [HtmlWebpackPluginConfig]
+    plugins: [HtmlWebpackPluginConfig],
+    devServer: {
+      port: 3000, // most common port
+      contentBase: './public',
+      inline: true,
+      historyApiFallback: true,
+    }
 }
