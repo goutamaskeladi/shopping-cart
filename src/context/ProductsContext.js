@@ -4,20 +4,17 @@ import axios from 'axios'
 const ProductContext = React.createContext({})
 
 class ProductProvider extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            products: [],
-            cart:[],
-            selectedItem: ""
-        }
-    }
-    handleDetail = () => {
-        console.log('Handling details')
+    state = {
+        products: [],
+        cart:[],
+        selectedItem: ""
     }
     addToCart = (id, name, price) => {
         this.setState({
-            selectedItem: name
+            selectedItem: name,
+            cart: this.state.cart.concat({
+                id, name, price
+            })
         })
     }
     componentDidMount() {

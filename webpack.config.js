@@ -4,6 +4,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     filename: 'index.html',
     inject: 'body'
 });
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -58,5 +59,8 @@ module.exports = {
       contentBase: './public',
       inline: true,
       historyApiFallback: true,
+    },
+    optimization: {
+      minimizer: [new UglifyJsPlugin()],
     }
 }

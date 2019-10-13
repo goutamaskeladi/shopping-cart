@@ -99,6 +99,27 @@ nav {
     }
 }
 
+.cart {
+    .cart-header {
+        border: 1px solid #ccc;
+        padding: 1rem;
+        a {
+            text-decoration: none;
+        }
+        p {
+            font-size: 20px;
+            color: $fontColor;
+        }
+    }
+    .cart-details {
+        margin: 2rem;
+    }
+    .empty-cart-message {
+        text-align: center;
+        margin: 5rem;
+    }
+}
+
 .product-full-details {
     margin: 1rem;
 }
