@@ -1,4 +1,4 @@
-#Shopping Cart Using React
+# Shopping Cart Using React
 
 Tools used:
   * React, React DOM and React Router
@@ -12,3 +12,6 @@ Install Procedure:
 
 To Run:
   * npm start
+  
+To Build:
+  * npm run build 
