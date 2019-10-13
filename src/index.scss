@@ -52,3 +52,52 @@ nav {
         cursor: pointer;
     }
 }
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1400px;
+    .product {
+        flex: 0 0 25rem;
+        border: 1px solid #ddd;
+        margin: 1rem;
+        .product-image {
+            position: relative;
+            img {
+                height: 10vh;
+                padding: 1rem;
+                display: block;
+            }
+            span.discount {
+                font-size: 10px;
+                background: #90ee90a8;
+                position: absolute;
+                top: 2rem;
+            }
+        }
+        .product-info {
+            background: #d3d3d3c7;
+            padding: 1rem;
+            .product-name {
+                margin-bottom: 10px;
+            }
+            .add-to-cart-button {
+                float: right;
+                color: #03A9F4;
+                border: 1px solid #03A9F4;
+                background: transparent;
+                font-size: 14px;
+                width: 90px;
+                padding: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+    .loading-message {
+        margin: 0 auto;
+    }
+}
+
+
+
