@@ -53,7 +53,7 @@ nav {
     }
 }
 
-main {
+.product-list {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -99,5 +99,7 @@ main {
     }
 }
 
-
+.product-full-details {
+    margin: 1rem;
+}
 

@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import Product from './Product'
-import { ProductConsumer } from '../context/Products'
+import { ProductConsumer } from '../context/ProductsContext'
 
 export default class ProductList extends Component {
     render() {
         return (
-            <main>
+            <div className="product-list">
                <ProductConsumer>
                    {
                        (context) => {
                           if(context.products.length > 0) {
                             return context.products.map(item => {
-                                return <Product key={item.id} {...item}/>
+                                return <Product key={item.id} {...item} addToCart={context.addToCart}/>
                             })
                           } else {
                              return <h2 className="loading-message">Loading, Please Wait...</h2>
@@ -19,7 +19,7 @@ export default class ProductList extends Component {
                        }
                    }
                </ProductConsumer>
-            </main>
+            </div>
         )
     }
 }

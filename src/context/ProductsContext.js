@@ -7,14 +7,18 @@ class ProductProvider extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: []
+            products: [],
+            cart:[],
+            selectedItem: ""
         }
     }
     handleDetail = () => {
         console.log('Handling details')
     }
-    addToCart = () => {
-        console.log('Handling addToCart')
+    addToCart = (id, name, price) => {
+        this.setState({
+            selectedItem: name
+        })
     }
     componentDidMount() {
         axios.get('https://api.myjson.com/bins/qhnfp')
