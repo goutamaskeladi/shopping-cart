@@ -27,7 +27,9 @@ const CartItems = props => {
                     <span className="item-name">{item.name}</span>
                 </div>
                 <div className="item-qty">
-
+                     <span onClick={() => props.items.decrement(item.id)} className="qty-button"> - </span>
+                     <span className="qty">{item.qty}</span>
+                     <span onClick={() => props.items.increment(item.id)} className="qty-button"> + </span>
                 </div>
                 <div className="item-price">
                   <p>${item.price}</p>
@@ -60,7 +62,11 @@ export default class Cart extends Component {
                     </ul>
                   </div>
                   <div className="order-list">
-                    <p>Cart Total</p>
+                    <p>Total</p>
+                    <span className="order-items">Items&nbsp;({products.cart.length})</span>
+                    <span>Order Total</span>&nbsp;$<span className="order-total">{
+                      products.cart.reduce(function(acc, val) { return acc + val.price }, 0)
+                    }</span>
                   </div>
                 </div>
               );

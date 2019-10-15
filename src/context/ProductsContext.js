@@ -13,15 +13,43 @@ class ProductProvider extends Component {
         this.setState({
             selectedItem: name,
             cart: this.state.cart.concat({
-                id, img_url, name, price, discount
+                id, img_url, name, price, discount, qty: 1
             })
         })
     }
-    increment = () => {
-
+    increment = (id) => {
+        // Need to fix here
+        let addedItem = this.state.cart.find(item => item.id === id)
+        addedItem.qty += 1 
+        let originalPrice = localStorage.getItem('originalPrice')
+        if(originalPrice) {
+            addedItem.price = originalPrice * addedItem.qty
+        } else {
+            localStorage.setItem('originalPrice', addedItem.price)
+            addedItem.price = addedItem.price * addedItem.qty
+        }
+        let cart = this.state.cart;
+        cart.forEach(function(item, i) { if (item.id == id) cart[i] = addedItem })
+        this.setState({
+            cart : cart
+        })
     }
-    decrement = () => {
-
+    decrement = (id) => {
+        // Need to fix here
+        let addedItem = this.state.cart.find(item => item.id === id)
+        addedItem.qty -= 1
+        let originalPrice = localStorage.getItem('originalPrice')
+        if(originalPrice) {
+            addedItem.price = originalPrice * addedItem.qty
+        } else {
+            localStorage.setItem('originalPrice', addedItem.price)
+            addedItem.price = addedItem.price * addedItem.qty
+        }
+        let cart = this.state.cart;
+        cart.forEach(function(item, i) { if (item.id == id) cart[i] = addedItem })
+        this.setState({
+            cart : cart
+        })
     }
     componentDidMount() {
         axios.get('https://api.myjson.com/bins/qhnfp')

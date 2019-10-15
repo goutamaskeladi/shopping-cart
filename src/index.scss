@@ -163,16 +163,43 @@ nav {
         }
         .item-qty {
             flex: 1;
+            text-align: center;
+            margin-top: 1rem;
+            margin-left: 2rem;
+            .qty {
+               padding: 1rem;
+               border: 1px solid #ddd;
+            }
+            .qty-button {
+              padding: 1rem;
+              cursor: pointer;
+            }
         }
         .item-price {
             flex: 1;
             font-weight: 600;
+            margin-top: 1rem;
+            p {
+              margin-left: 4rem;
+            }
         }
       }
     }
     .order-list {
       flex: 1;
       margin: 1rem;
+      border: 2px solid #ddd;
+      padding: 1rem;
+      p {
+        margin-bottom: 10px;
+      }
+      .order-items {
+        margin-bottom: 10px;
+        display: block;
+      }
+      .order-total {
+        font-weight: 600;
+      }
     }
   }
   ul.cart-collection:last-child {
