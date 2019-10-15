@@ -9,11 +9,11 @@ class ProductProvider extends Component {
         cart:[],
         selectedItem: ""
     }
-    addToCart = (id, name, price) => {
+    addToCart = (id, img_url, name, price) => {
         this.setState({
             selectedItem: name,
             cart: this.state.cart.concat({
-                id, name, price
+                id, img_url, name, price
             })
         })
     }
